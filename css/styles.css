@@ -1,6 +1,7 @@
 body {
 display: grid;
 position: relative;
+font-family: Muli;
 }
 
 h1 {
