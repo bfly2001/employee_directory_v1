@@ -8,6 +8,11 @@ position: relative;
   grid-template-columns: 30% 30% 30%;
   grid-template-rows: 25% 25% 25% 25%;
   justify-content: center;
+  grid-gap: 3%;
+}
+
+.card {
+  border: 1px grey solid;
 }
 
 .overlay {
