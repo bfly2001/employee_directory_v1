@@ -7,6 +7,20 @@ const overlay = document.querySelector(".overlay");
 const modalContainer = document.querySelector(".modal-content");
 const modalClose = document.querySelector(".modal-close");
 
+//employee filter
+const searchBar = document.forms["search-form"].querySelector('input');
+searchBar.addEventListener('keyup', function(e) {
+  const term = e.target.value.toLowerCase();
+  employees.forEach(function(employee){
+    const userName = employee.name.textContent;
+    if(userName.toLowerCase().indexOf(term)!= -1){
+      employee.style.display = 'grid';
+    } else {
+      employee.style.display = 'none';
+    }
+  })
+})
+
 //fetch data from API
 fetch(urlAPI)
 .then(res => res.json())

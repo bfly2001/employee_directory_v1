@@ -13,6 +13,12 @@
   <body>
     <header>
       <h1>Employee Directory</h1>
+      <div id="search-box">
+        <form id="search-form">
+        <input id='search-input' type="search" name="q" placeholder="Search">
+        <button id='search-button' type="submit"><svg id='mag-glass' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path stroke="grey" fill="grey" d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></button></input>
+      </form>
+      </div>
     </header>
     <main class="grid-container">
       <div class="card">
@@ -111,24 +117,24 @@
           <p class="address">Seattle</p>
         </div>
       </div>
-      <div class="overlay hidden">
-        <div class="modal">
-          <button class="modal-close">X</button>
-          <div class="modal-content">
-            <img class="avatar" src="" />
-            <div class="card-text">
-              <h2 class="name">Bill Lee</h2>
-              <p class="email">Blee.com</p>
-              <p class="address">Seattle</p>
-              <hr />
-              <p>205-973-4344</p>
-              <p class="address">234 River St, Seattle WA 98100</p>
-              <p>Birthday: 08/11/75</p>
-            </div>
+    </main>
+    <div class="overlay hidden">
+      <div class="modal">
+        <button class="modal-close">X</button>
+        <div class="modal-content">
+          <img class="avatar" src="" />
+          <div class="card-text">
+            <h2 class="name">Bill Lee</h2>
+            <p class="email">Blee.com</p>
+            <p class="address">Seattle</p>
+            <hr />
+            <p>205-973-4344</p>
+            <p class="address">234 River St, Seattle WA 98100</p>
+            <p>Birthday: 08/11/75</p>
           </div>
         </div>
       </div>
-    </main>
+    </div>
     <script src="js/script.js"></script>
   </body>
 </html>

@@ -4,8 +4,22 @@ body {
   font-family: Muli;
 }
 
+header {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
 h1 {
   margin-left: 2.5%;
+}
+
+#search-box {
+  align-self: center;
+  justify-self: end;
+}
+
+#search-input {
+  border: grey solid 1px;
 }
 
 img {
