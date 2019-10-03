@@ -11,12 +11,13 @@ const modalClose = document.querySelector(".modal-close");
 const searchBar = document.forms["search-form"].querySelector('input');
 searchBar.addEventListener('keyup', function(e) {
   const term = e.target.value.toLowerCase();
-  employees.forEach(function(employee){
-    const userName = employee.name.textContent;
+  const employees = document.getElementsByClassName('card-text');
+  Array.from(employees).forEach(function(employee){
+    const userName = employee.firstElementChild.textContent;
     if(userName.toLowerCase().indexOf(term)!= -1){
-      employee.style.display = 'grid';
+      employee.parentNode.style.display = 'grid';
     } else {
-      employee.style.display = 'none';
+      employee.parentNode.style.display = 'none';
     }
   })
 })
