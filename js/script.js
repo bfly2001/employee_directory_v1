@@ -6,6 +6,8 @@ const gridContainer = document.querySelector(".grid-container");
 const overlay = document.querySelector(".overlay");
 const modalContainer = document.querySelector(".modal-content");
 const modalClose = document.querySelector(".modal-close");
+const modalNext = document.querySelector("#modal-next");
+const modalBack = document.querySelector("#modal-back");
 
 //employee filter
 const searchBar = document.forms["search-form"].querySelector('input');
@@ -86,9 +88,22 @@ gridContainer.addEventListener('click', e => {
     const card = e.target.closest(".card");
     const index = card.getAttribute('data-index');
     displayModal(index);
+    return index
   }
 });
 
 modalClose.addEventListener('click', () => {
   overlay.classList.add("hidden");
+});
+
+modalNext.addEventListener('click', () => {
+  index ++;
+  employee = employees[index];
+  displayModal(employee);
+});
+
+modalBack.addEventListener('click', () => {
+  index --;
+  employee = employees[index];
+  displayModal(employee);
 });

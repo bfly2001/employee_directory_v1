@@ -73,12 +73,12 @@ img {
   cursor: pointer;
 }
 
-.modal-next {
+#modal-next {
   float: right;
   font-size: x-large;
 }
 
-.modal-back {
+#modal-back {
   float: left;
   font-size: x-large;
 }
