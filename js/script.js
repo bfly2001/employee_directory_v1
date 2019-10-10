@@ -72,7 +72,7 @@ function displayModal(index) {
       <p class="address">${city}</p>
       <hr />
       <p>${phone}</p>
-      <p class="address">${street}, ${state} ${postcode}</p>
+      <p class="address">${street} ${state} ${postcode}</p>
       <p>Birthday: ${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</p>
     </div>
   `;
@@ -87,8 +87,9 @@ gridContainer.addEventListener('click', e => {
 
     const card = e.target.closest(".card");
     const index = card.getAttribute('data-index');
+    console.log(index);
     displayModal(index);
-    return index
+    return index;
   }
 });
 
@@ -97,13 +98,15 @@ modalClose.addEventListener('click', () => {
 });
 
 modalNext.addEventListener('click', () => {
-  index ++;
-  employee = employees[index];
-  displayModal(employee);
+  let index = document.querySelector('.card').getAttribute('data-index');
+  console.log(index);
+  index = index++;
+  console.log(index);
+  displayModal(index);
 });
 
 modalBack.addEventListener('click', () => {
+  let index = document.querySelector('.modal').getAttribute('data-index');
   index --;
-  employee = employees[index];
-  displayModal(employee);
+  displayModal(index);
 });
