@@ -57,7 +57,7 @@ function displayEmployees(employeeData) {
     gridContainer.innerHTML = employeeHTML;
   }
 
-function displayModal(index) {
+function displayModal(employees, index) {
 
   let { name, dob, phone, email, location: { city, street, state, postcode
   }, picture } = employees[index];
@@ -88,7 +88,8 @@ gridContainer.addEventListener('click', e => {
     const card = e.target.closest(".card");
     const index = card.getAttribute('data-index');
     console.log(index);
-    displayModal(index);
+    console.log(employees);
+    displayModal(employees, index);
     return index;
   }
 });
@@ -98,11 +99,9 @@ modalClose.addEventListener('click', () => {
 });
 
 modalNext.addEventListener('click', () => {
-  let index = document.querySelector('.card').getAttribute('data-index');
-  console.log(index);
+  let index = document.querySelector('.modal').getAttribute('data-index');
   index = index++;
-  console.log(index);
-  displayModal(index);
+  displayModal(employees, index);
 });
 
 modalBack.addEventListener('click', () => {
