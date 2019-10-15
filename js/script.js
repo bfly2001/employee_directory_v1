@@ -43,7 +43,7 @@ function displayEmployees(employeeData) {
     let picture = employee.picture;
 
     employeeHTML += `
-      <div class="card" data-index="${index}">
+      <div class="card" onclick="currentEmployee(${index})">
       <img class="avatar" src="${picture.large}" />
       <div class="card-text">
       <h2 class="name">${name.first} ${name.last}</h2>
@@ -57,7 +57,7 @@ function displayEmployees(employeeData) {
     gridContainer.innerHTML = employeeHTML;
   }
 
-function displayModal(employees, index) {
+function displayModal(index) {
 
   let { name, dob, phone, email, location: { city, street, state, postcode
   }, picture } = employees[index];
@@ -80,8 +80,10 @@ function displayModal(employees, index) {
   overlay.classList.remove("hidden");
   modalContainer.innerHTML = modalHTML;
 }
-
-gridContainer.addEventListener('click', e => {
+function currentEmployee(index) {
+  displayModal(index);
+}
+/*gridContainer.addEventListener('click', e => {
 
   if (e.target !== gridContainer) {
 
@@ -92,7 +94,7 @@ gridContainer.addEventListener('click', e => {
     displayModal(employees, index);
     return index;
   }
-});
+});*/
 
 modalClose.addEventListener('click', () => {
   overlay.classList.add("hidden");
