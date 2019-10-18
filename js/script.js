@@ -43,7 +43,7 @@ function displayEmployees(employeeData) {
     let picture = employee.picture;
 
     employeeHTML += `
-      <div class="card" onclick="currentEmployee(${index})">
+      <div class="card" data-index="${index}">
       <img class="avatar" src="${picture.large}" />
       <div class="card-text">
       <h2 class="name">${name.first} ${name.last}</h2>
@@ -65,6 +65,7 @@ function displayModal(index) {
   let date = new Date(dob.date);
 
   const modalHTML = `
+    <span>${index}</span>
     <img class="avatar" src="${picture.large}" />
     <div class="text-container">
       <h2 class="name">${name.first} ${name.last}</h2>
@@ -80,10 +81,8 @@ function displayModal(index) {
   overlay.classList.remove("hidden");
   modalContainer.innerHTML = modalHTML;
 }
-function currentEmployee(index) {
-  displayModal(index);
-}
-/*gridContainer.addEventListener('click', e => {
+
+gridContainer.addEventListener('click', e => {
 
   if (e.target !== gridContainer) {
 
@@ -91,23 +90,35 @@ function currentEmployee(index) {
     const index = card.getAttribute('data-index');
     console.log(index);
     console.log(employees);
-    displayModal(employees, index);
+    displayModal(index);
     return index;
   }
-});*/
+});
 
 modalClose.addEventListener('click', () => {
   overlay.classList.add("hidden");
 });
 
 modalNext.addEventListener('click', () => {
-  let index = document.querySelector('.modal').getAttribute('data-index');
-  index = index++;
-  displayModal(employees, index);
+  let index = document.querySelector('span').innerHTML;
+  index++;
+  console.log(index);
+  if(index >= 12) {
+    displayModal(0);
+  }
+  else if(index <= 12) {
+    displayModal(index);
+  }
 });
 
 modalBack.addEventListener('click', () => {
-  let index = document.querySelector('.modal').getAttribute('data-index');
-  index --;
-  displayModal(index);
+  let index = document.querySelector('span').innerHTML;
+  index--;
+  console.log(index);
+  if(index <= 0) {
+    displayModal(12);
+  }
+  else if(index >= 0) {
+    displayModal(index);
+  }
 });

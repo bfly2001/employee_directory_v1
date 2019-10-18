@@ -13,6 +13,10 @@ h1 {
   margin-left: 2.5%;
 }
 
+span {
+  display: none;
+}
+
 #search-box {
   align-self: center;
   justify-self: end;
