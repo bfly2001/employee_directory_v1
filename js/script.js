@@ -113,12 +113,13 @@ modalNext.addEventListener('click', () => {
 
 modalBack.addEventListener('click', () => {
   let index = document.querySelector('span').innerHTML;
-  index--;
-  console.log(index);
-  if(index <= 0) {
-    displayModal(12);
-  }
-  else if(index >= 0) {
+  if(index >= 1) {
+    index--;
+    console.log(index);
     displayModal(index);
+  }
+  else {
+    console.log(index);
+    displayModal(11);
   }
 });
