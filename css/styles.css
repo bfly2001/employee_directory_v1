@@ -19,7 +19,7 @@ span {
 
 #search-box {
   align-self: center;
-  justify-self: end;
+  justify-self: center;
 }
 
 #search-input {
@@ -51,7 +51,7 @@ img {
 }
 
 .overlay {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -60,7 +60,7 @@ img {
 }
 
 .modal {
-  width: 375px;
+  width: 275px;
   margin: 15% auto auto;
   position: relative;
   text-align: center;
@@ -100,6 +100,17 @@ img {
     grid-gap: 3%;
   }
 
+  .modal {
+    width: 375px;
+    margin: 15% auto auto;
+    position: relative;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #778;
+    border-radius: 5px;
+    padding: 30px 20px;
+  }
+
 }
 
 @media only screen and (min-width: 1024px) {
@@ -109,5 +120,16 @@ img {
     grid-template-rows: auto auto auto auto;
     justify-content: center;
     grid-gap: 3%;
+  }
+
+  .modal {
+    width: 375px;
+    margin: 15% auto auto;
+    position: relative;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #778;
+    border-radius: 5px;
+    padding: 30px 20px;
   }
 }

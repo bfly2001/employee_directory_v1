@@ -1,4 +1,4 @@
-//global variables
+//Global Variables
 let employees = [];
 const urlAPI = `https://randomuser.me/api/?results=12&inc=name, picture,
 email, location, phone, dob &noinfo &nat=US`
@@ -9,7 +9,7 @@ const modalClose = document.querySelector(".modal-close");
 const modalNext = document.querySelector("#modal-next");
 const modalBack = document.querySelector("#modal-back");
 
-//employee filter
+//Employee Filter
 const searchBar = document.forms["search-form"].querySelector('input');
 searchBar.addEventListener('keyup', function(e) {
   const term = e.target.value.toLowerCase();
@@ -30,7 +30,7 @@ fetch(urlAPI)
 .then(res => res.results)
 .then(displayEmployees)
 .catch(err => console.log(err))
-
+//Display Employees
 function displayEmployees(employeeData) {
   employees = employeeData;
 
@@ -56,7 +56,7 @@ function displayEmployees(employeeData) {
 
     gridContainer.innerHTML = employeeHTML;
   }
-
+//Display Modal Function
 function displayModal(index) {
 
   let { name, dob, phone, email, location: { city, street, state, postcode
@@ -81,7 +81,7 @@ function displayModal(index) {
   overlay.classList.remove("hidden");
   modalContainer.innerHTML = modalHTML;
 }
-
+//Display Modal On-click
 gridContainer.addEventListener('click', e => {
 
   if (e.target !== gridContainer) {
@@ -98,7 +98,7 @@ gridContainer.addEventListener('click', e => {
 modalClose.addEventListener('click', () => {
   overlay.classList.add("hidden");
 });
-
+//Next Button for Modal
 modalNext.addEventListener('click', () => {
   let index = document.querySelector('span').innerHTML;
   index++;
@@ -110,7 +110,7 @@ modalNext.addEventListener('click', () => {
     displayModal(index);
   }
 });
-
+//Previous Button for Modal
 modalBack.addEventListener('click', () => {
   let index = document.querySelector('span').innerHTML;
   if(index >= 1) {
