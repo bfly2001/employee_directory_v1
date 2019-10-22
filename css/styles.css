@@ -35,7 +35,8 @@ img {
   grid-template-columns: auto;
   grid-template-rows: auto auto auto auto;
   justify-content: center;
-  grid-gap: 3%;
+  grid-gap: 1%;
+  padding: 3%;
 }
 
 .card {
@@ -97,7 +98,7 @@ img {
     grid-template-columns: auto auto;
     grid-template-rows: auto auto auto auto;
     justify-content: center;
-    grid-gap: 3%;
+    grid-gap: 1%;
   }
 
   .modal {
@@ -119,7 +120,7 @@ img {
     grid-template-columns: auto auto auto;
     grid-template-rows: auto auto auto auto;
     justify-content: center;
-    grid-gap: 3%;
+    grid-gap: 1%;
   }
 
   .modal {
