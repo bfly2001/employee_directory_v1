@@ -1,3 +1,5 @@
+/* Mobile First Layout */
+
 body {
   display: grid;
   position: relative;
@@ -91,6 +93,8 @@ img {
 .hidden {
   display: none;
 }
+
+/* Media Queries for Tablet and Desktop */
 
 @media only screen and (min-width: 768px) {
   .grid-container {
